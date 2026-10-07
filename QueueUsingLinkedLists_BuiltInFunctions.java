@@ -21,5 +21,8 @@ public class Main {
 		
 		// Checking if the queue is empty
 		System.out.println("\nIs the queue empty? " + (q.isEmpty()? " Yes " : " No "));
+
+		// Getting size of Queue
+		System.out.println("\nSize: " + q.size());
 	}
 }
