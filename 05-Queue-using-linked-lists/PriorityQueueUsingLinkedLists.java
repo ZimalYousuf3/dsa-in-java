@@ -21,7 +21,7 @@ public class Queue {
 		rear = null;
 	}
 	
-	// Adding elements at the end
+	// Adding elements at correct position according to priority
 	void enqueue(int data, int priority) {
 		
 		Node newNode = new Node(data, priority);
@@ -35,7 +35,7 @@ public class Queue {
 			return;
 		}
 		
-		// Case-2: New node has higher priority
+		// Case-2: New node has highest priority
 		if (priority < front.priority) {
 			
 			newNode.next = front;
