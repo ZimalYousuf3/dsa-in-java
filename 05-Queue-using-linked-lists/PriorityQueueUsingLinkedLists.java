@@ -26,7 +26,7 @@ public class Queue {
 		
 		Node newNode = new Node(data, priority);
 		
-		// Case-1: Queue is empty
+		// Queue is empty
 		if(front == null) {
 			
 			front = newNode;
@@ -35,7 +35,7 @@ public class Queue {
 			return;
 		}
 		
-		// Case-2: New node has highest priority
+		// New node has highest priority
 		if (priority < front.priority) {
 			
 			newNode.next = front;
@@ -43,8 +43,14 @@ public class Queue {
 			
 			return;
 		}
+
+		// New node has lowest priority
+        if (priority > rear.priority) {
+            rear.next = newNode;
+            rear = newNode;
+        }
 		
-		// Case-3: Find correct position
+		// Find correct position
 		Node temp = front;
 		
 		while(temp.next != null && temp.next.priority <= priority) {
