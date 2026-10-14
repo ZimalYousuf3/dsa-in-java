@@ -26,6 +26,16 @@ public class Main {
 		return (1 + countNodes(node.left) + countNodes(node.right)); 
 	}
 
+	static void preorder (Node node) {
+		
+		if (node == null) {
+			return;
+		}
+		System.out.println(node.data + " ");
+		preorder(node.left);
+		preorder(node.right);
+	}
+
 	public static void main(String[] args) {
 
     // Creating Nodes
@@ -62,6 +72,8 @@ public class Main {
 		// Displaying 
 		System.out.println("Right of G: " + G.right.data);
 		System.out.println("Nodes in B: " + countNodes(B));
+		System.out.println("Preorder: ");
+		preorder(A);
 		
 		// Reasons
 		System.out.println("\nReasons:-");
