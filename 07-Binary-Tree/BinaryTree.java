@@ -31,9 +31,40 @@ public class Main {
 		if (node == null) {
 			return;
 		}
-		System.out.println(node.data + " ");
-		preorder(node.left);
-		preorder(node.right);
+		System.out.print(node.data + " "); // 1. Node
+		preorder(node.left);               // 2. Left
+		preorder(node.right);              // 3. Right
+	}
+
+	static void inorder (Node node) {
+		
+		if (node == null) {
+			return;
+		}
+		inorder(node.left);                  // 1. Left
+		System.out.print(node.data + " ");   // 2. Node
+		inorder(node.right);                 // 3. Right
+	}
+
+	static void postorder (Node node) {
+		
+		if (node == null) {
+			return;
+		}
+		postorder(node.left);               // 1. Left
+		postorder(node.right);              // 2. Right
+		System.out.print(node.data + " ");  // 3. Node
+	}
+
+	static void printLeaf(Node node) {
+    	
+		if (IsLeaf(node)) {
+			System.out.println(node.data);
+			return;
+		}
+		printLeaf(node.left);
+		printLeaf(node.right);
+		
 	}
 
 	public static void main(String[] args) {
