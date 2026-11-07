@@ -41,6 +41,12 @@ public class LinkedList {
             return; 
         }
 
+        if (head.next == null) {
+            System.out.println(" \nDeleted value: " + head.data);
+            head = null;
+            return;
+        }
+
         Node deletedNode = head;
         head = head.next;
         int value = deletedNode.data;
